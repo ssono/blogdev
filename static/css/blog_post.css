@@ -7,7 +7,7 @@
 
 .text {
   margin: 1%;
-  font-size: 20px;
+  font-size: 16px;
 
 }
 
@@ -29,6 +29,7 @@
   padding: .5%;
   background: rgb(230, 220, 120);
   border-radius: 10px;
+  font-size: 12px;
 }
 
 form {
