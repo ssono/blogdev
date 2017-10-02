@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block style %}<link rel="stylesheet" type="text/css" href="/static/css/thoughts.css"></link>{% endblock %}
+{% block body %}
+<div class="blog">
+  {% for post in posts %}
+  <div class="title">
+    <a href={{ post.title|urlencode}}><h1>{{ post.title }}</h1></a>
+    <p>{{ post.date }}</p>
+    <hr>
+  </div>
+  <div class="text">
+    <p>  {{ post.text|linebreaks|escape|truncatechars:1000 }}</p> <a href={{ post.title|urlencode }}>see more</a>
+  </div>
+  <hr>
+  {% empty %}
+      <h1>No posts to show</h1>
+  {% endfor %}
+</div>
+{% endblock %}

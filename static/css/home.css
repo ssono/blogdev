@@ -1,0 +1,27 @@
+#left{
+  width: 68.5%;
+  margin: 3%;
+  float: left;
+}
+
+#left h1 {
+  padding: 1%;
+  background-color:  rgb(22,36,62);
+  border: solid;
+  border-color: rgb(0,153,153);
+  font-size: 40px;
+  color: rgb(255, 191, 0);
+}
+
+#left p {
+  font-size: 24px;
+}
+
+#right {
+  width: 17%;
+  background-color:  rgb(22,36,62);
+  padding: .5%;
+  margin: 4.75% 3% 3% 3%;
+  border: solid;
+  border-color: rgb(0,153,153);
+}

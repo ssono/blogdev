@@ -1,0 +1,27 @@
+.title{
+  display: inline-block;
+  margin: 1%;
+  font-family: 'Times', serif;
+  font-size: 24px;
+}
+
+.title a{
+  color: black;
+  font-family: 'Times', serif;
+}
+
+.text {
+  margin: 1%;
+  font-size: 20px;
+
+}
+
+.blog {
+  margin: 0 15%;
+}
+
+a {
+  color: rgb(0,153,153);
+  text-decoration: none;
+  font-family: 'Lato';
+}

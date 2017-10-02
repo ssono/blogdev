@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block style %}<link rel="stylesheet" type="text/css" href="/static/css/home.css"></link>{% endblock %}
+{% block body %}
+<div id="left">
+  <h1>{{ news.title }}</h1>
+  <p>{{ news.text|linebreaks|escape}}</p>
+  <hr>
+</div>
+  <img id="right" src="static/images/sage.jpg">
+{% endblock %}

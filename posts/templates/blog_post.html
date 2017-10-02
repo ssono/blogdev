@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block style %}<link rel="stylesheet" type="text/css" href="/static/css/blog_post.css"></link>{% endblock %}
+{% block body %}
+<script src="/static/js/comment.js"></script>
+<div class="blog">
+  <div class="title">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.date }}</p>
+    <hr>
+  </div>
+  <div class="text">
+    <p>{{ post.text|linebreaks|escape }}</p>
+    {% if post.quote %}
+      <br>
+      <blockquote>"{{ post.quote}}"</blockquote>
+      <br>
+    {% endif %}
+    <hr>
+  </div>
+  <br>
+  <div class="comment_header">
+    <h1>Comments</h1>
+    <hr>
+  </div>
+  <form method="post" id="comment_form">
+    <textarea name='new_comment' id='text' rows='10' cols='100' placeholder="Your Comment..."></textarea>
+    <br>
+    <input type="submit" value="Comment" id="submit">
+    {% csrf_token %}
+  </form>
+<div id="all_comments">
+  {% for comment in comments %}
+  <div class ="comment">
+    <p>{{ comment.text|linebreaks|escape }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
