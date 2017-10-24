@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -9,29 +10,31 @@
   {% block style %}{% endblock %}
 </head>
 <body>
-  <nav>
-  <div class="header">
-    <h1 class="header">{{ title }}</h1>
-      <ul class="header">
-        {% if title != "Home" %}
-          <li><a href="/">Home</a></li>
-        {% endif %}
-        {% if title != "About Me" %}
-          <li><a href="/aboutme/">About Me</a></li>
-        {% endif %}
-        {% if title != "Thoughts" %}
-          <li><a href="/thoughts">Thoughts</a></li>
-        {% endif %}
-        {% if title != "Resume" %}
-          <li><a href="/resume">Resume</a></li>
-        {% endif %}
-      </ul>
+  <div class="sides">
+    <nav>
+    <div class="header">
+      <!--<h1 class="header">{{ title }}</h1>-->
+        <ul class="header">
+          {% if title != "Home" %}
+            <li><a href="/">Home</a></li>
+          {% endif %}
+          {% if title != "About Me" %}
+            <li><a href="/aboutme/">About Me</a></li>
+          {% endif %}
+          {% if title != "Thoughts" %}
+            <li><a href="/thoughts">Thoughts</a></li>
+          {% endif %}
+          {% if title != "Resume" %}
+            <li><a href="/resume">Resume</a></li>
+          {% endif %}
+        </ul>
+    </div>
+      <hr>
+    </nav>
+    <div id='content'>
+      {% block body %}
+      {% endblock %}
+    </div>
   </div>
-    <h1 class="header" id="name">Sage Ono</h1>
-</nav>
-<div id='content'>
-  {% block body %}
-  {% endblock %}
-</div>
 </body>
 </html>

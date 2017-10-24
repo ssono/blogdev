@@ -6,9 +6,13 @@ from posts.models import Post, Comment, News
 
 
 def home(request):
+    try:
+        news = News.objects.all()[0]
+    except IndexError:
+        return render(request, 'base.html', {'title': "Home",})
 
 
-    return render(request, 'base.html', {'title': "Home",})
+    return render(request, 'home.html', {'title': "Home", 'news': news})
 
 def contact(request):
     return render(request, 'contact.html', {'title': "Contact"})
@@ -28,7 +32,7 @@ def thoughts(request):
         raise Http404()"""
 
 def resume(request):
-    return render(request, 'resume.html', {})
+    return render(request, 'resume.html', {'title': "Resume"})
 
 def blog_post(request, post_name):
     try:
