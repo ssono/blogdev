@@ -28,6 +28,7 @@
     <input type="submit" value="Comment" id="submit">
     {% csrf_token %}
   </form>
+<hr>  
 <div id="all_comments">
   {% for comment in comments %}
   <div class ="comment">
